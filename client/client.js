@@ -5,9 +5,6 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
     console.log("Source: " + source );
     console.log("Name: " + args[0]);  
     console.log("Raw Command: " + rawCommand );
-
-    let player = GetPlayerGuid();
-    console.log("Player: " + player);
    // let player = GetPlayerName();
    // let playerPos = GetEntityCoords(player, false);
    let playerSrc = GetPlayerServerId(PlayerId());
