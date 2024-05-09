@@ -1,11 +1,12 @@
-// Register a command 'sayhello' that takes one argument: a name
-RegisterCommand('sayhello', (source, args, rawCommand) => {
-    // The args array contains the arguments the player typed after the command
-    // args[0] is the first argument, args[1] is the second argument, etc.
+
+RegisterCommand('dragrace', (source, args, rawCommand) => {
     let name = args[0];
-    console.log("IMA NIGGGER");
-    // Send a message to the player
-    emitNet('chat:addMessage', source, {
-        args: [`Hello, ${name}!`]
-    });
+    console.log("Drag Race Event Started");
+    console.log("Player Name: " + name);
+    
+    let player = GetPlayerId();
+    let playerPos = GetEntityCoords(player, false);
+
+    let checkpoint = CreateCheckpoint(1, playerPos.x, playerPos.y, playerPos.z, 0, 0, 0, 5, 255, 0, 0, 200, 0);
+
 }, false);
