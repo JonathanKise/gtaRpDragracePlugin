@@ -19,7 +19,8 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
 
     let playerHeading = GetEntityHeading(PlayerPedId());
     console.log(playerHeading + " is the player's heading");
-    
+    let [checkpointX, checkpointY, checkpointZ] = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 402, 0.0);
     let checkpoint = CreateCheckpoint (1, playerX, playerY, playerZ-1, playerX, playerY, playerZ, 5.0, 255, 0, 0, 200, 0);
+    let checkpoint2 = CreateCheckpoint (1, checkpointX, checkpointY, checkpointZ-1, playerX, playerY, playerZ, 5.0, 255, 0, 0, 200, 0);
 }, false);
 
