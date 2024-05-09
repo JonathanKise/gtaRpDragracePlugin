@@ -11,11 +11,7 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
  //  let playerIdentifier = GetPlayerIdentifier(playerSrc, 0);
    console.log(playerSrc+ " is the player source");
 
-   onNet('myCoordinates', () => {
-    const player = global.source; // use (global as any).source for Typescript
-    const ped = GetPlayerPed(player);
-    const [playerX, playerY, playerZ] = GetEntityCoords(ped);
-  
-    console.log(`${playerX}, ${playerY}, ${playerZ}`);
+   const [playerX, playerY, playerZ] = GetEntityCoords(PlayerPedId(), false);
+
 }, false);
-});
+
