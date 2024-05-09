@@ -8,8 +8,8 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
    // let player = GetPlayerName();
    // let playerPos = GetEntityCoords(player, false);
    let playerSrc = GetPlayerServerId(PlayerId());
-   let playerIdentifier = GetPlayerIdentifier(playerSrc, 0);
-   console.log(`The identifier of the player is ${playerIdentifier}`);
+ //  let playerIdentifier = GetPlayerIdentifier(playerSrc, 0);
+   console.log(playerSrc+ " is the player source");
   /* const [playerX, playerY, playerZ] = GetEntityCoords(PlayerPedId(), false);
    console.log(`${playerX}, ${playerY}, ${playerZ}`);
 
