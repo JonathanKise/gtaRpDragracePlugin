@@ -1,12 +1,14 @@
 
 RegisterCommand('dragrace', (source, args, rawCommand) => {
-    let name = args[0];
+  
     console.log("Drag Race Event Started");
-    console.log("Player Name: " + name);
+    console.log("Source: " + source );
+    console.log("Args: " + args );  
+    console.log("Raw Command: " + rawCommand );
     
     let player = GetPlayerId();
     let playerPos = GetEntityCoords(player, false);
 
-    let checkpoint = CreateCheckpoint(1, playerPos.x, playerPos.y, playerPos.z, 0, 0, 0, 5, 255, 0, 0, 200, 0);
+    let checkpoint = CreateCheckpoint(1, playerPos[0], playerPos[1], playerPos[2], 0, 0, 0, 5, 255, 0, 0, 200, 0);
 
 }, false);
