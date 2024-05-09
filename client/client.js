@@ -18,4 +18,4 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
   
     console.log(`${playerX}, ${playerY}, ${playerZ}`);
 }, false);
-
+});
