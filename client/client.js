@@ -11,11 +11,11 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
  //  let playerIdentifier = GetPlayerIdentifier(playerSrc, 0);
    console.log(playerSrc+ " is the player source");
 
-   const [playerX, playerY, playerZ] = GetEntityCoords(PlayerPedId(), false);
+   const [playerX, playerY, playerZ] = GetEntityCoords(PlayerPedId(), true);
 
     console.log(playerX + " is the player X");
     console.log(playerY + " is the player Y");
     console.log(playerZ + " is the player Z");
-    let checkpoint = CreateCheckpoint (1, playerX, playerY, playerZ, playerX+20, playerY+20, playerZ+20, 5.0, 255, 0, 0, 200, 0);
+    let checkpoint = CreateCheckpoint (1, playerX, playerY, playerZ, playerX+1, playerY+1, playerZ+1, 5.0, 255, 0, 0, 200, 0);
 }, false);
 
