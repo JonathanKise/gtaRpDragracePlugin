@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@citizenfx/client": "^2.0.8102-1",
-    "@citizenfx/server": "^2.0.8102-1"
-  }
-}
