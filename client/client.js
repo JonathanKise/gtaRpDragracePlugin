@@ -3,9 +3,11 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
   
     console.log("Drag Race Event Started");
     console.log("Source: " + source );
-    console.log("Args: " + args[0]);  
+    console.log("Name: " + args[0]);  
     console.log("Raw Command: " + rawCommand );
-    
+
+    let player = GetPlayerPed();
+    console.log("Player: " + player);
    // let player = GetPlayerName();
    // let playerPos = GetEntityCoords(player, false);
 
