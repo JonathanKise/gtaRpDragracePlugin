@@ -13,5 +13,8 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
 
    const [playerX, playerY, playerZ] = GetEntityCoords(PlayerPedId(), false);
 
+    console.log(playerX + " is the player X");
+    console.log(playerY + " is the player Y");
+    console.log(playerZ + " is the player Z");
 }, false);
 
