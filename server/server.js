@@ -13,22 +13,16 @@ onNet('dragrace:start', (data) => {
     let testingdata = "Hello E";
     let opponentEndpoint = GetPlayerEndpoint(data.opponentId);
     console.log(opponentEndpoint);
-    if (!opponentEndpoint) {
+    if (!opponentEndpoint || data.opponentId === data.playerSrc) {
         //INVALID OPPONENT MESSAGE GOES HERE
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type")
         emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)//FOR DEBUG MUST BE REMOVED LATER
         return;
     } else {
-        if (data.opponentId === data.playerSrc) {
-            //IDIOT MESSAGE GOES HERE
-            emitNet('dragrace:testing', data.playerSrc, "Thats you")
-            return;
-        } else {
-            //MAIN FUNCTION GOES HERE
-            emitNet('dragrace:testing', data.playerSrc, "Valid Opponent")
-            emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)//FOR DEBUG MUST BE REMOVED LATER
-            return;
-        }
+        //MAIN FUNCTION GOES HERE
+        emitNet('dragrace:testing', data.playerSrc, "Valid Opponent")
+        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)//FOR DEBUG MUST BE REMOVED LATER
+        return;
     }
     //emitNet('dragrace:testing', data.playerSrc, testingdata);   
     //emitNet('dragrace:testing', 2, testingdata);   
