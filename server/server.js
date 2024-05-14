@@ -13,6 +13,8 @@ onNet('dragrace:start', (data) => {
     let testingdata = "Hello E";
     let opponentEndpoint = GetPlayerEndpoint(data.opponentId);
     console.log(opponentEndpoint);
+    console.log(data.playerSrc);
+    console.log(data.opponentId);
     if (!opponentEndpoint || data.opponentId === data.playerSrc) {
         //INVALID OPPONENT MESSAGE GOES HERE
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type")
