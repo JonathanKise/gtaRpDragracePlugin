@@ -19,11 +19,8 @@ onNet('dragrace:start', (data) => {
     console.log(data.playerSrc);
     console.log(data.opponentId);
 
-    MySQL.execute('SELECT JSON_EXTRACT(money, "$.cash") as cash FROM players WHERE identifier = ?', [opponentId], function(err, opponentResult) {
-        if (err) throw err;
-        let playerCash = PlayerResult[0].cash;
-        console.log(playerCash);
-    })
+    let player = QBCore.Functions.GetPlayer(playerSrc);
+    console.log(player.PlayerData.money.cash);
 
     if (!opponentEndpoint || data.opponentId == data.playerSrc) {
         //INVALID OPPONENT MESSAGE GOES HERE
