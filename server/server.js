@@ -22,6 +22,7 @@ onNet('dragrace:start', (data) => {
     let playerD = QBCore.Functions.GetPlayer(data.playerSrc);
     let opponentD = QBCore.Functions.GetPlayer(data.opponentId);
     let playerC = playerD.PlayerData.money.cash;
+    console.log(playerC);
     //let opponentC = opponentD.PlayerData.money.cash;
     if (playerC < wager) {
         emitNet('dragrace:testing', data.playerSrc, "Invalid Wager")
