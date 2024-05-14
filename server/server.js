@@ -20,7 +20,7 @@ onNet('dragrace:start', (data) => {
     console.log(data.opponentId);
 
     let playerD = QBCore.Functions.GetPlayer(data.playerSrc);
-    let opponentD = QBCore.Functions.GetPlayer(data.opponentId);
+    let opponentD = QBCore.Functions.GetPlayer(GetPlayerServerId(data.opponentId));
 
     if (!playerD) {
         console.log('playerD is not valid');
