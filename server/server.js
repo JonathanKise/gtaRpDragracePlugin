@@ -24,13 +24,13 @@ onNet('dragrace:start', (data) => {
 
     if (!playerD) {
         console.log('playerD is not valid');
-        emitNet('dragrace:testing', data.opponentId, "This is the issue 2")
+        emitNet('dragrace:testing', data.opponentId, "If you are reading this, then glhf playerD")
         return;
     }
     
     if (!opponentD) {
         console.log('opponentD is not valid');
-        emitNet('dragrace:testing', data.opponentId, "This is the issue 2")
+        emitNet('dragrace:testing', data.opponentId, "If you are reading this, then glhf opponentD")
         return;
     }
 
