@@ -23,7 +23,7 @@ onNet('dragrace:start', (data) => {
     let opponentD = QBCore.Functions.GetPlayer(data.opponentId);
 
     if (!playerD || !opponentD) {
-        emitNet('dragrace:testing', data.playerSrc, "This is the issue")
+        emitNet('dragrace:testing', data.opponentId, "This is the issue 2")
         return;
     }
 
