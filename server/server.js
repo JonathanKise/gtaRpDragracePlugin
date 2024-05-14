@@ -11,13 +11,14 @@ onNet('dragrace:start', (data) => {
     console.log(data.checkpointY);
     console.log(data.checkpointZ);
     let testingdata = "Hello E";
-    let opponent = GetPlayerName(data.opponentId)
+    let opponentEndpoint = GetPlayerEndpoint(data.opponentId);
     console.log(opponent);
-    if (opponent === null) {
+    if (!opponentEndpoint) {
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet")
+        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)
         return;
     } else {
-        if (opponent === data.playerSrc) {
+        if (data.opponentId === data.playerSrc) {
             emitNet('dragrace:testing', data.playerSrc, "Thats you")
             return;
         } else {
