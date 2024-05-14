@@ -11,7 +11,7 @@ onNet('dragrace:start', (data) => {
     console.log(data.checkpointY);
     console.log(data.checkpointZ);
     let testingdata = "Hello E";
-    let opponent = GetPlayerName(data.opponentId)
+    let opponent = GetPlayerPedId(data.opponentId)
     console.log(opponent);
     if (opponent === null) {
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet")
