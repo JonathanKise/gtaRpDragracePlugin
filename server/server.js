@@ -1,3 +1,5 @@
+let QBCore = global.exports['qb-core'].GetCoreObject();
+
 let player1 = null;
 let player2 = null;
 onNet('dragrace:start', (data) => {
@@ -17,7 +19,7 @@ onNet('dragrace:start', (data) => {
     console.log(data.playerSrc);
     console.log(data.opponentId);
 
-    mysql.execute('SELECT JSON_EXTRACT(money, "$.cash") as cash FROM players WHERE identifier = ?', [opponentId], function(err, opponentResult) {
+    MySQL.execute('SELECT JSON_EXTRACT(money, "$.cash") as cash FROM players WHERE identifier = ?', [opponentId], function(err, opponentResult) {
         if (err) throw err;
         let playerCash = PlayerResult[0].cash;
         console.log(playerCash);
