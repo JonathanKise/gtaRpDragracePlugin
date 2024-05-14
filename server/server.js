@@ -19,13 +19,21 @@ onNet('dragrace:start', (data) => {
     console.log(data.playerSrc);
     console.log(data.opponentId);
 
-    let player = QBCore.Functions.GetPlayer(data.playerSrc);
-    console.log(player.PlayerData.money.cash);
+    let playerD = QBCore.Functions.GetPlayer(data.playerSrc);
+    let opponentD = QBCore.Functions.GetPlayer(data.opponentId);
+    let playerC = playerD.PlayerData.money.cash;
+    let opponentC = opponentD.PlayerData.money.cash;
 
     if (!opponentEndpoint || data.opponentId == data.playerSrc) {
         //INVALID OPPONENT MESSAGE GOES HERE
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type")
         emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)//FOR DEBUG MUST BE REMOVED LATER
+        if (playerC < wager || opponentC < wager) {
+            emitNet('dragrace:testing', data.playerSrc, "Invalid Wager")
+            return;
+        } else {
+            emitNet('dragrace:testing', data.playerSrc, "Valid Wager")
+        }
         return;
     } else {
         //MAIN FUNCTION GOES HERE
