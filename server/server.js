@@ -1,5 +1,3 @@
-let mysql = require('mysql-async');
-
 let player1 = null;
 let player2 = null;
 onNet('dragrace:start', (data) => {
