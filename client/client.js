@@ -22,6 +22,7 @@ RegisterCommand('dragrace', (source, args, rawCommand) => {
     let data = {
       playerSrc: GetPlayerServerId(PlayerId()),
       opponentId: args[0],
+      wager: args[1],
       playerX: playerX,
       playerY: playerY,
       playerZ: playerZ,

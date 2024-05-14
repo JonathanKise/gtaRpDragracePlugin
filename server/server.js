@@ -12,6 +12,7 @@ onNet('dragrace:start', (data) => {
     console.log(data.checkpointZ);
     let testingdata = "Hello E";
     let opponentEndpoint = GetPlayerEndpoint(data.opponentId);
+    let wager = data.wager;
     console.log(opponentEndpoint);
     console.log(data.playerSrc);
     console.log(data.opponentId);
