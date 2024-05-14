@@ -13,10 +13,12 @@ onNet('dragrace:start', (data) => {
     let testingdata = "Hello E";
     let opponentEndpoint = GetPlayerEndpoint(data.opponentId);
     let wager = data.wager;
+    let playerD = QBCore.Functions.GetPlayer(data.playerSrc);
+    let opponentD = QBCore.Functions.GetPlayer(data.opponentId);
     console.log(opponentEndpoint);
     console.log(data.playerSrc);
     console.log(data.opponentId);
-    console.log(data.playerSrc.PlayerData.money.cash)
+    console.log(playerD.PlayerData.money.cash);
     if (!opponentEndpoint || data.opponentId == data.playerSrc) {
         //INVALID OPPONENT MESSAGE GOES HERE
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type")
