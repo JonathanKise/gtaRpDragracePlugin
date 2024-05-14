@@ -17,8 +17,13 @@ onNet('dragrace:start', (data) => {
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet")
         return;
     } else {
-        emitNet('dragrace:testing', data.playerSrc, "Valid Opponet")
-        return;
+        if (opponent === data.playerSrc) {
+            emitNet('dragrace:testing', data.playerSrc, "Thats you")
+            return;
+        } else {
+            emitNet('dragrace:testing', data.playerSrc, "Valid Opponent")
+            return;
+        }
     }
     //emitNet('dragrace:testing', data.playerSrc, testingdata);   
     //emitNet('dragrace:testing', 2, testingdata);   
