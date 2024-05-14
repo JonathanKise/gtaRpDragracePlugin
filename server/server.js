@@ -23,6 +23,7 @@ onNet('dragrace:start', (data) => {
             return;
         } else {
             emitNet('dragrace:testing', data.playerSrc, "Valid Opponent")
+            emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)
             return;
         }
     }
