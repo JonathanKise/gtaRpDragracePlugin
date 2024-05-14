@@ -11,6 +11,6 @@ onNet('dragrace:start', (data) => {
     console.log(data.checkpointY);
     console.log(data.checkpointZ);
     let testingdata = "Hello E";
-    emitNet('dragrace:testing', 1, testingdata);   
+    emitNet('dragrace:testing', data.playerSrc, testingdata);   
     emitNet('dragrace:testing', 2, testingdata);   
 });
