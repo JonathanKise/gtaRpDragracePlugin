@@ -32,7 +32,6 @@ onNet('dragrace:start', (data) => {
         return;
     } else {
         emitNet('dragrace:testing', data.playerSrc, "Valid Wager")
-        return;
     }
 
     if (!opponentEndpoint || data.opponentId == data.playerSrc) {
