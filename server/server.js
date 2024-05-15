@@ -32,6 +32,11 @@ onNet('dragrace:start', (data) => {
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type");
         emitNet('dragrace:testing', data.playerSrc, opponentEndpoint);//FOR DEBUG MUST BE REMOVED LATER
         //IF/ELSE STATEMENT BELOW THIS LINE NEEDS TO MOVE TO THE ELSE STATEMENT BELOW. THIS IS ONLY HERE FOR SOLO TESTING
+        return;
+    } else {
+        //MAIN FUNCTION GOES HERE
+        emitNet('dragrace:testing', data.playerSrc, "Valid Opponent");
+        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint);
         if (playerC < wager || opponentC < wager) { //CHECKS FOR VALID WAGER
             emitNet('dragrace:testing', data.playerSrc, "Invalid Wager");
             return;
@@ -39,12 +44,7 @@ onNet('dragrace:start', (data) => {
             emitNet('dragrace:testing', data.playerSrc, "Valid Wager");
             playerD.Functions.RemoveMoney('cash', wager, "dragrace-won");
             opponentD.Functions.RemoveMoney('cash', wager, "dragrace-won");
-        }
-        return;
-    } else {
-        //MAIN FUNCTION GOES HERE
-        emitNet('dragrace:testing', data.playerSrc, "Valid Opponent");
-        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint);//FOR DEBUG MUST BE REMOVED LATER
+        }//FOR DEBUG MUST BE REMOVED LATER
         return;
     }
     //emitNet('dragrace:testing', data.playerSrc, testingdata);   
