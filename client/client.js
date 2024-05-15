@@ -74,3 +74,10 @@ function isRaceOver() {
       let [playerX, playerY, playerZ] = GetEntityCoords(PlayerPedId(), true);    
     }, 1000);*/
 
+RegisterCommand('endrace', (source, args, rawCommand) => {
+  let data = {
+    playerSrc: GetPlayerServerId(PlayerId()),
+    winnings: args[0]
+  };
+  emitNet('dragrace:endrace', data);
+});

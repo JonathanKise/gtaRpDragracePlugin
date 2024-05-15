@@ -49,3 +49,14 @@ onNet('dragrace:start', (data) => {
     //emitNet('dragrace:testing', data.playerSrc, testingdata);   
     //emitNet('dragrace:testing', 2, testingdata);   
 });
+
+
+onNet('dragrace:endrace', (data) => {
+    let player = QBCore.Functions.GetPlayer(data.playerSrc);
+    if (player) {
+        let winnings = data.winnings; // assuming winnings is passed in data
+        player.Functions.AddMoney('cash', winnings, "dragrace-won");
+    } else {
+        console.log('Player not found');
+    }
+});
