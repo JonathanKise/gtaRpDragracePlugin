@@ -27,17 +27,18 @@ onNet('dragrace:start', (data) => {
     console.log(playerC);
     console.log(opponentC);
     //let opponentC = opponentD.PlayerData.money.cash;
-    if (playerC < wager) {
-        emitNet('dragrace:testing', data.playerSrc, "Invalid Wager")
-        return;
-    } else {
-        emitNet('dragrace:testing', data.playerSrc, "Valid Wager")
-    }
 
     if (!opponentEndpoint || data.opponentId == data.playerSrc) {
         //INVALID OPPONENT MESSAGE GOES HERE
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type")
         emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)//FOR DEBUG MUST BE REMOVED LATER
+
+        if (playerC < wager) {
+            emitNet('dragrace:testing', data.playerSrc, "Invalid Wager")
+            return;
+        } else {
+            emitNet('dragrace:testing', data.playerSrc, "Valid Wager")
+        }
         return;
     } else {
         //MAIN FUNCTION GOES HERE
