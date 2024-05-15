@@ -39,7 +39,7 @@ onNet('dragrace:start', (data) => {
         } else {
             emitNet('dragrace:testing', data.playerSrc, "Valid Wager");
             playerD.Functions.RemoveMoney('cash', wager, "dragrace-won");
-            opponentD.Functions.RemoveMoney('cash', wager, "dragrace-won");
+            //opponentD.Functions.RemoveMoney('cash', wager, "dragrace-won");
 
         }
         return;
