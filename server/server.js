@@ -20,7 +20,7 @@ onNet('dragrace:start', (data) => {
     console.log(data.opponentId);
 
     let playerD = QBCore.Functions.GetPlayer(data.playerSrc);
-    let opponentD = QBCore.Functions.GetPlayer(data.opponentId);
+    let opponentD = QBCore.Functions.GetPlayer(data.playerSrc);
 
     let playerC = playerD.PlayerData.money.cash;
     let opponentC = opponentD.PlayerData.money.cash;
