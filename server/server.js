@@ -30,20 +30,23 @@ onNet('dragrace:start', (data) => {
 
     if (!opponentEndpoint || data.opponentId == data.playerSrc) {
         //INVALID OPPONENT MESSAGE GOES HERE
-        emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type")
-        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)//FOR DEBUG MUST BE REMOVED LATER
+        emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type");
+        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint);//FOR DEBUG MUST BE REMOVED LATER
 
         if (playerC < wager) {
-            emitNet('dragrace:testing', data.playerSrc, "Invalid Wager")
+            emitNet('dragrace:testing', data.playerSrc, "Invalid Wager");
             return;
         } else {
-            emitNet('dragrace:testing', data.playerSrc, "Valid Wager")
+            emitNet('dragrace:testing', data.playerSrc, "Valid Wager");
+            playerD.Functions.RemoveMoney('cash', wager, "dragrace-won");
+            opponentD.Functions.RemoveMoney('cash', wager, "dragrace-won");
+
         }
         return;
     } else {
         //MAIN FUNCTION GOES HERE
-        emitNet('dragrace:testing', data.playerSrc, "Valid Opponent")
-        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint)//FOR DEBUG MUST BE REMOVED LATER
+        emitNet('dragrace:testing', data.playerSrc, "Valid Opponent");
+        emitNet('dragrace:testing', data.playerSrc, opponentEndpoint);//FOR DEBUG MUST BE REMOVED LATER
         return;
     }
     //emitNet('dragrace:testing', data.playerSrc, testingdata);   
