@@ -26,21 +26,19 @@ onNet('dragrace:start', (data) => {
     let opponentC = opponentD.PlayerData.money.cash;
     console.log(playerC);
     console.log(opponentC);
-    //let opponentC = opponentD.PlayerData.money.cash;
 
-    if (!opponentEndpoint || data.opponentId == data.playerSrc) {
+    if (!opponentEndpoint || data.opponentId == data.playerSrc) { //CHECKS FOR VALID PLAYER/SELF RACE
         //INVALID OPPONENT MESSAGE GOES HERE
         emitNet('dragrace:testing', data.playerSrc, "Invalid Opponet/Invalid ID type");
         emitNet('dragrace:testing', data.playerSrc, opponentEndpoint);//FOR DEBUG MUST BE REMOVED LATER
-
-        if (playerC < wager) {
+        //IF/ELSE STATEMENT BELOW THIS LINE NEEDS TO MOVE TO THE ELSE STATEMENT BELOW. THIS IS ONLY HERE FOR SOLO TESTING
+        if (playerC < wager || opponentC < wager) { //CHECKS FOR VALID WAGER
             emitNet('dragrace:testing', data.playerSrc, "Invalid Wager");
             return;
-        } else {
+        } else { //REMOVES WAGER FROM BOTH PARTIES
             emitNet('dragrace:testing', data.playerSrc, "Valid Wager");
             playerD.Functions.RemoveMoney('cash', wager, "dragrace-won");
-            //opponentD.Functions.RemoveMoney('cash', wager, "dragrace-won");
-
+            opponentD.Functions.RemoveMoney('cash', wager, "dragrace-won");
         }
         return;
     } else {
@@ -54,10 +52,10 @@ onNet('dragrace:start', (data) => {
 });
 
 
-onNet('dragrace:endrace', (data) => {
+onNet('dragrace:racepay', (data) => {
     let player = QBCore.Functions.GetPlayer(data.playerSrc);
     if (player) {
-        let winnings = data.winnings; // assuming winnings is passed in data
+        let winnings = data.winnings; // this will need to be doubled here or in the client
         player.Functions.AddMoney('cash', winnings, "dragrace-won");
     } else {
         console.log('Player not found');
