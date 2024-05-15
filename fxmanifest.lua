@@ -4,12 +4,10 @@ game 'gta5'
 
 
 client_scripts {
-	'@es_extended/locale.lua',
 	'client/client.js'
 }
 
 server_scripts {
-	'@es_extended/locale.lua',
 	"@mysql-async/lib/MySQL.lua",
 	'server/server.js',
 	--'server/get_name.lua',
